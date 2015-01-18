@@ -1,0 +1,11 @@
+﻿Build started 2015-01-18 11:58:58 AM.
+     1>Project "C:\Users\Wahid\Documents\GitHub\GAME1011_A1_ShafiqueWahid\GAME1011_A1_ShafiqueWahid\GAME1011_A1_ShafiqueWahid.vcxproj" on node 2 (Rebuild target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
+         Source.cpp
+     1>c:\users\wahid\documents\github\game1011_a1_shafiquewahid\game1011_a1_shafiquewahid\source.cpp(10): error C2059: syntax error : 'return'
+     1>Done Building Project "C:\Users\Wahid\Documents\GitHub\GAME1011_A1_ShafiqueWahid\GAME1011_A1_ShafiqueWahid\GAME1011_A1_ShafiqueWahid.vcxproj" (Rebuild target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.69
