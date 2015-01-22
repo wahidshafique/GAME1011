@@ -1,12 +1,15 @@
 #include <iostream>
+#include <iomanip>
 #include <string>
+#include <math.h>
 using namespace std;
 
 void process();
 void kilogramsToPounds();
 void celsiusToKelvin();
 void teaspoonsToMil();
-void Multiplication();
+void multiplication();
+void square();
 
 void write(string input){
 	cout << input << endl;
@@ -20,11 +23,13 @@ void menu(){
 	write("4) Multiplication Table");
 	write("5) Squares Table");
 	write("x) Exit");
+	write(" ");
+	cout << "Enter selection: " << flush;
 	process();
 }
 
 void clearScreen() {
-	cout << string(100, '\n'); //because system() is evil
+	cout << string(100, '\n');
 }
 
 void endMessage(void(*function)()){
@@ -35,7 +40,8 @@ void endMessage(void(*function)()){
 	if (input == 7){
 		clearScreen();
 		(*function)();
-	} else {
+	}
+	else {
 		clearScreen();
 		menu();
 	}
@@ -80,7 +86,7 @@ void teaspoonsToMil(){
 	endMessage(&teaspoonsToMil);
 }
 
-void Multiplication(){
+void multiplication(){
 	write("Multiplication Table");
 	write("-------------------");
 	write("");
@@ -89,17 +95,49 @@ void Multiplication(){
 	cin >> number;
 	write("");
 	if (number > 0){
-		for (int i = 1; i < number; i++){
-			for (int j = 1; j < number; j++){
-				cout << i*number << endl;
-				cout << j*number << endl;
+		for (int i = 1; i < number + 1; i++)
+		{
+			if (i < 10){
+				cout << i << "| ";
 			}
+			else cout << i << "|";
+			for (int j = 1; j < number + 1; j++)
+			{
+				cout.width(5); cout << left << j * i;
+			}
+			cout << endl;
 		}
-
 	}
-	else Multiplication();
+	else multiplication();
+
+	endMessage(&multiplication);
 }
 
+void square(){
+
+	write("Square Table");
+	write("-------------------");
+	write("");
+	cout << "Enter in a value to make the table : " << flush;
+
+	int number;
+	cin >> number;
+	write("");
+	if (number > 0){
+		for (int i = 1; i < number + 1; i++){
+			int squared = i*i;
+			cout << i;
+			if (squared > 99){
+				cout << setw(11);
+			}
+			else cout << setw(12);
+			cout << setfill('.') << squared << endl;
+		}
+	}
+	else square();
+
+	endMessage(&square);
+}
 
 void process(){
 	int input;
@@ -120,14 +158,12 @@ void process(){
 		break;
 	case 4:
 		clearScreen();
-		Multiplication();
+		multiplication();
 		break;
 	case 5:
 		clearScreen();
+		square();
 		break;
-	case 6:
-		clearScreen();
-		menu();
 	default:
 		break;
 	}
