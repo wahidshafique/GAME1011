@@ -125,6 +125,7 @@ void square(){
 	write("");
 	if (number > 0){
 		for (int i = 1; i < number + 1; i++){
+			if (i < 2) cout << "Num \t" <<"Square" << endl;
 			int squared = i*i;
 			cout << i;
 			if (squared > 99){
