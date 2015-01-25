@@ -91,19 +91,19 @@ void multiplication(){
 	write("-------------------");
 	write("");
 	cout << "Enter in a value to make the table : " << flush;
-	int number;
-	cin >> number;
+	int multnumber;
+	cin >> multnumber;
 	write("");
-	if (number > 0){
-		for (int i = 1; i < number + 1; i++)
+	if (multnumber > 0){
+		for (int i = 1; i < multnumber + 1; i++)
 		{
 			if (i < 10){
 				cout << i << "| ";
 			}
 			else cout << i << "|";
-			for (int j = 1; j < number + 1; j++)
+			for (int j = 1; j < multnumber + 1; j++)
 			{
-				cout.width(5); cout << left << j * i;
+				cout << setw(5) << setfill(' ') << left << j * i;
 			}
 			cout << endl;
 		}
@@ -132,7 +132,7 @@ void square(){
 				cout << setw(11);
 			}
 			else cout << setw(12);
-			cout << setfill('.') << squared << endl;
+			cout << setfill('.') << right << squared << endl;
 		}
 	}
 	else square();
