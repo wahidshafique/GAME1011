@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GAME1011_W02_LabD", "GAME1011_W02_LabD\GAME1011_W02_LabD.vcxproj", "{CAC32B72-4CC9-4112-91D5-6738C0B8891C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CAC32B72-4CC9-4112-91D5-6738C0B8891C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CAC32B72-4CC9-4112-91D5-6738C0B8891C}.Debug|Win32.Build.0 = Debug|Win32
+		{CAC32B72-4CC9-4112-91D5-6738C0B8891C}.Release|Win32.ActiveCfg = Release|Win32
+		{CAC32B72-4CC9-4112-91D5-6738C0B8891C}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
