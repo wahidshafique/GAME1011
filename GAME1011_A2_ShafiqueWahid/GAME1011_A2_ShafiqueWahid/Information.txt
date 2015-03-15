@@ -1,0 +1,22 @@
+"Winter Is Coming" 2.22	5 false
+"The Kingsroad"	2.20 3 false
+"Lord Snow"	2.44 0 false
+"Cripples, Bastards, and Cogman" 2.45 1 false
+"The Wolf and the Lion"	2.58 11 
+"A Golden Crown" 2.44 6 true 
+"You Win or You Die" 2.40 3 true
+"The Pointy End" 2.72 5 false 
+"Baelor" 2.66 2789 3 true
+"Fire and Blood" 3.04 2 true
+
+
+"The North Remembers" 3.86 3 true 
+"The Night Lands" 3.76 2 false
+"What Is Dead May Never Die" 3.77 2 false
+"Garden of Bones" 3.65 0 false
+"The Ghost of Harrenhal" 3.90 4 true 
+"The Old Gods and the New" 3.88 40 true
+"A Man Without Honor" 3.69 18 true 
+"The Prince of Winterfell" 3.86 12 false
+"Blackwater" 3.38 2 false
+"Valar Morghulis" 4.20 9 false
