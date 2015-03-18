@@ -1,22 +1,22 @@
-"Winter Is Coming" 2.22	5 false
-"The Kingsroad"	2.20 3 false
-"Lord Snow"	2.44 0 false
-"Cripples, Bastards, and Cogman" 2.45 1 false
-"The Wolf and the Lion"	2.58 11 
-"A Golden Crown" 2.44 6 true 
-"You Win or You Die" 2.40 3 true
-"The Pointy End" 2.72 5 false 
-"Baelor" 2.66 2789 3 true
-"Fire and Blood" 3.04 2 true
+Winter_Is_Coming 2.22 5 false
+The_Kingsroad 2.20 3 false
+Lord_Snow 2.44 0 false
+Cripples,_Bastards,_and_Cogman 2.45 1 false
+The_Wolf_and_the_Lion 2.58 11 
+A_Golden_Crown" 2.44 6 true 
+You_Win_or_You_Die 2.40 3 true
+The_Pointy_End 2.72 5 false 
+Baelor 2.66 2789 3 true
+Fire_and_Blood 3.04 2 true
 
 
-"The North Remembers" 3.86 3 true 
-"The Night Lands" 3.76 2 false
-"What Is Dead May Never Die" 3.77 2 false
-"Garden of Bones" 3.65 0 false
-"The Ghost of Harrenhal" 3.90 4 true 
-"The Old Gods and the New" 3.88 40 true
-"A Man Without Honor" 3.69 18 true 
-"The Prince of Winterfell" 3.86 12 false
-"Blackwater" 3.38 2 false
-"Valar Morghulis" 4.20 9 false
+The_North_Remembers 3.86 3 true 
+The_Night_Lands 3.76 2 false
+What_Is_Dead_May_Never_Die 3.77 2 false
+Garden_of_Bones 3.65 0 false
+The_Ghost_of_Harrenhal 3.90 4 true 
+The_Old_Gods_and_the_New 3.88 40 true
+A_Man_Without_Honor 3.69 18 true 
+The_Prince_of_Winterfell 3.86 12 false
+Blackwater 3.38 2 false
+Valar_Morghulis 4.20 9 false

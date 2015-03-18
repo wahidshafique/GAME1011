@@ -3,6 +3,7 @@
 #include <sstream>
 #include <vector>
 #include <stdlib.h>
+#include <string>
 
 using namespace std;
 
@@ -14,40 +15,14 @@ protected:
 	int deathCount;
 	bool didAnyMajorCharacterDie;
 
-
 public:
 	string getName() { return episodeName; }
 	float getViewers() { return USviewersInMillions; }
 	int getDeaths() { return deathCount; }
 	bool getMajorChars() { return didAnyMajorCharacterDie; }
 
-	string readFile(string file);
-
 	GOT_S1_S2(string GOTinformation);
-	~GOT_S1_S2();
-
-	//private:
-
 };
-
-/*GOT_S1_S2::readFile(){
-	inFile.open("information.txt");
-
-	if (inFile.fail()){
-	cerr << "Error Error" << endl;
-	exit(1);
-	}
-	}*/
-
-/*GOT_S1_S2::readFile(string file){
-	ifstream GOTinformation(file);
-
-	string contents;
-	while (!file.eof()){
-	getline(file, contents);
-
-	}
-	}*/
 
 GOT_S1_S2::GOT_S1_S2(string GOTinformation) {
 
@@ -56,26 +31,49 @@ GOT_S1_S2::GOT_S1_S2(string GOTinformation) {
 	GOTstream >> USviewersInMillions;
 	GOTstream >> deathCount;
 	GOTstream >> boolalpha >> didAnyMajorCharacterDie;
-	
+
 }
 
-GOT_S1_S2 ::~GOT_S1_S2() {
-}
-
-
-class GOT_EXTRA_INFO : public GOT_S1_S2 {
-private:
-	string director;
-
+class GOT_PRINT {
 public:
-	GOT_EXTRA_INFO(string);
+	GOT_PRINT(string file);
+	//private:
+	vector<GOT_S1_S2> information;//priv
 };
 
-int main(){
 
-	GOT_S1_S2 shit("poop_do 12.2 13 false");
-	cout << "Name: " << shit.getName() << endl;
-	cout << "viewers: " << shit.getViewers() << endl;
-	cout << "deaths: " << shit.getDeaths() << endl;
-	cout << "maj: " << shit.getMajorChars() << endl;
+GOT_PRINT::GOT_PRINT(string file) {
+
+	ifstream inFile;
+	
+	inFile.open(file);
+
+	if (inFile.fail()){
+		cerr << "Error Error" << endl;
+		exit(1);
+	}
+
+	string contents;
+	while (!inFile.eof()) {
+		getline(inFile, contents);
+		GOT_S1_S2 s(contents);
+		information.push_back(s);
+	}
+	inFile.close();
+}
+
+void printEpisodes(GOT_S1_S2 info){
+	cout << "Name of Episode: " << info.getName() << endl;
+	cout << "US Viewers in Millions: " << info.getViewers() << endl;
+	cout << "Notable Deaths: " << info.getDeaths() << endl;
+	cout << "Did Any Major Characters die: " << info.getMajorChars() << endl;
+	cout << "------------------------------" << endl;
+	cout << endl;
+}
+
+int main() {
+	GOT_PRINT info("Information.txt");
+	for (GOT_S1_S2 s : info.information){
+		printEpisodes(s);
+	}
 }
