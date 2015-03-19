@@ -8,8 +8,6 @@ You_Win_or_You_Die 2.40 3 true
 The_Pointy_End 2.72 5 false 
 Baelor 2.66 2789 3 true
 Fire_and_Blood 3.04 2 true
-
-
 The_North_Remembers 3.86 3 true 
 The_Night_Lands 3.76 2 false
 What_Is_Dead_May_Never_Die 3.77 2 false

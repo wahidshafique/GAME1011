@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+
 #include <vector>
 #include <stdlib.h>
 #include <string>
@@ -31,21 +32,22 @@ GOT_S1_S2::GOT_S1_S2(string GOTinformation) {
 	GOTstream >> USviewersInMillions;
 	GOTstream >> deathCount;
 	GOTstream >> boolalpha >> didAnyMajorCharacterDie;
-
 }
 
 class GOT_PRINT {
+
+private:
+	string foo;
+
 public:
 	GOT_PRINT(string file);
 	//private:
 	vector<GOT_S1_S2> information;//priv
 };
 
-
 GOT_PRINT::GOT_PRINT(string file) {
 
 	ifstream inFile;
-	
 	inFile.open(file);
 
 	if (inFile.fail()){
@@ -62,11 +64,16 @@ GOT_PRINT::GOT_PRINT(string file) {
 	inFile.close();
 }
 
-void printEpisodes(GOT_S1_S2 info){
-	cout << "Name of Episode: " << info.getName() << endl;
+void printEpisodes(GOT_S1_S2 info) {
+
+	static int i = 0;
+	i++;
+
+	cout << "(" << i << ") " << "Name of Episode: " << info.getName() << endl;
 	cout << "US Viewers in Millions: " << info.getViewers() << endl;
 	cout << "Notable Deaths: " << info.getDeaths() << endl;
-	cout << "Did Any Major Characters die: " << info.getMajorChars() << endl;
+	cout << "Did Any Major Characters die: ";
+	info.getMajorChars() == 0 ? cout << "No" << endl : cout << "Yes" << endl;
 	cout << "------------------------------" << endl;
 	cout << endl;
 }
