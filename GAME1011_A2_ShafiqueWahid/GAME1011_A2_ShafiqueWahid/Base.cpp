@@ -9,7 +9,6 @@
 using namespace std;
 
 class GOT_S1_S2 {
-
 protected:
 	string episodeName;
 	float USviewersInMillions;
@@ -22,11 +21,16 @@ public:
 	int getDeaths() { return deathCount; }
 	bool getMajorChars() { return didAnyMajorCharacterDie; }
 
+	void printEpisodes(GOT_S1_S2 info);
+	void open(string file);
+
+	GOT_S1_S2();
 	GOT_S1_S2(string GOTinformation);
+
+	vector<GOT_S1_S2> information;
 };
 
 GOT_S1_S2::GOT_S1_S2(string GOTinformation) {
-
 	stringstream GOTstream(GOTinformation);
 	GOTstream >> episodeName;
 	GOTstream >> USviewersInMillions;
@@ -34,21 +38,9 @@ GOT_S1_S2::GOT_S1_S2(string GOTinformation) {
 	GOTstream >> boolalpha >> didAnyMajorCharacterDie;
 }
 
-class GOT_PRINT {
-
-private:
-	string foo;
-
-public:
-	GOT_PRINT(string file);
-	//private:
-	vector<GOT_S1_S2> information;//priv
-};
-
-GOT_PRINT::GOT_PRINT(string file) {
-
+GOT_S1_S2::GOT_S1_S2() {
 	ifstream inFile;
-	inFile.open(file);
+	inFile.open("Information.txt");
 
 	if (inFile.fail()){
 		cerr << "Error Error" << endl;
@@ -56,16 +48,19 @@ GOT_PRINT::GOT_PRINT(string file) {
 	}
 
 	string contents;
-	while (!inFile.eof()) {
+
+	static int i = 0;
+	static int j = 4;
+	for (i; i < j; i++) {
 		getline(inFile, contents);
 		GOT_S1_S2 s(contents);
 		information.push_back(s);
 	}
+	j += 4;
 	inFile.close();
 }
 
-void printEpisodes(GOT_S1_S2 info) {
-
+void GOT_S1_S2::printEpisodes(GOT_S1_S2 info) {
 	static int i = 0;
 	i++;
 
@@ -78,9 +73,27 @@ void printEpisodes(GOT_S1_S2 info) {
 	cout << endl;
 }
 
-int main() {
-	GOT_PRINT info("Information.txt");
-	for (GOT_S1_S2 s : info.information){
-		printEpisodes(s);
+class GOT_INFO :public GOT_S1_S2 {
+private:
+	string foo;
+
+public:
+	GOT_INFO(string in) : GOT_S1_S2() {
+		foo = in;
+		cout << foo << endl << endl;
+
+		for (GOT_S1_S2 s : information){
+			printEpisodes(s);
+		}
 	}
+};
+
+int main() {
+
+	GOT_INFO info1("Load first batch");
+	GOT_INFO info2("Load second batch");
+	GOT_INFO info3("Load third batch");
+	GOT_INFO info4("Load forth batch");
+	GOT_INFO info5("Load fifth batch");
+	cout << info1.information.size();
 }
