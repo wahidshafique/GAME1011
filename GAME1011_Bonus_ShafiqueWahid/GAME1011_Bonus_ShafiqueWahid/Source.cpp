@@ -1,6 +1,7 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <iterator>
 
 using namespace std;
 
@@ -10,23 +11,27 @@ class List {
 public:
 	List(int vectorSize) { vectorList.reserve(vectorSize); }
 
+	int size() const {
+		return vectorList.size();
+	}
+
 	void push(A item) { vectorList.push_back(item); }
+
 	void pop() { vectorList.pop_back(); }
+
 	void pushFront(A item) { vectorList.insert(vectorList.begin(), item); }
 
 	void popFront() { vectorList.erase(vectorList.begin()); }
 
-	A operator[] (A index) { return vectorList[index]; }
+	A operator[] (A index) const { return vectorList[index]; }
 
-	friend ostream &operator<< (ostream &out, const List<A> &object){
-			out <<  object << ' ';
-			return out;
+	friend ostream& operator<< (ostream& out, const List<A> &object) {
+		for (int i = 0; i < object.size(); i++) {
+			out << object[i] << " ";
+		}
+		return out;
 	}
 };
-	/*ostream& operator<< (ostream& os, const List& e) {
-		for (vector<char>::const_iterator i = vectorList.begin(); i != vectorList.end(); ++i)
-		os << *i << ' ';
-		}*/
 
 int main() {
 	List<char> object1(2);
@@ -47,8 +52,8 @@ int main() {
 	object3.pushFront("Hello!");
 	object3.pop();
 
-	cout << "First element in object3 is: " << object2[0] << endl;
-	cout << "Object 1 items are: " << object1 << endl;
+	cout << "First element in object2 is: " << object2[0] << endl;
+	cout << "Object1 items are: " << object1 << endl;
 	return 0;
 }
 
