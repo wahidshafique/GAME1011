@@ -15,7 +15,7 @@ protected:
 public:
 	GOT();
 	void printEpisodes();
-	//virtual void foo() = 0;
+	virtual void stop() = 0;
 };
 
 void GOT::printEpisodes() {
@@ -57,33 +57,28 @@ GOT::GOT() {
 }
 
 class GOT_INFO : public GOT {
-	//Inherit this class publically from the base class.
 private:
-	//This class will only have ONE new private member variable
 	string foo;
 public:
 	GOT_INFO(string in) {
-		//set the string to whatever you like when you create an object of this subclass
-		//( non-default constructor)
 		static int num = 0;
 		num++;
 		foo = in;
 		cout << foo << num << endl;
 	}
-	//virtual void foo() {}
+	void redundantPrintEpisodes(){ printEpisodes(); }
+	virtual void stop(){}
 };
 
 int main() {
-	// create a vector of objects from the subclass NOT the base class
 	vector<GOT_INFO> information;
-	//create five objects of the subclass
+
 	for (int i = 0; i < 5; i++){
 		GOT_INFO info("Load batch ");
 		information.push_back(info);
 	}
+
 	for (GOT_INFO s : information) {
-		s.printEpisodes();
+		s.redundantPrintEpisodes();
 	}
-	//check to see how many objects in vector
-	cout << "of " << information.size() << endl;
 }
